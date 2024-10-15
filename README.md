@@ -1,4 +1,7 @@
 # quantum-rendering-unity
+## Support
+My environment is Unity 2022.3.11f1, Python 3.11.6, and macOS Sequoia (v15.0 Beta), so it should work at least in this environment. The Python server probably won't run on Windows (support is planned). If you want to run it on Windows, run the server directly from the command prompt.
+
 ## Requirements
 - Unity
 - Python
