@@ -4,7 +4,7 @@ My environment is Unity 2022.3.11f1, Python 3.11.6, and macOS Sequoia (v15.0 Bet
 
 ## Requirements
 - Unity
-- Python
+- Python & Related modules (They are described in requirements.txt.)
 
 ## How to use
 (1) Open the Main scene in "Assets > QuantumRendering > Scenes".
