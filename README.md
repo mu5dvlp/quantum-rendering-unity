@@ -36,6 +36,8 @@ It will work by default settings.
 
 Then, you can see the quantum rendering in the Scene window (NOT the Game window).
 
+![09](https://github.com/user-attachments/assets/aa7e3f9a-6908-46b1-ad05-0b63780d8f8b)
+
 (6) Moreover, you can set the strength of quantum blur, which is measured in radians.
 
 ![08](https://github.com/user-attachments/assets/63bc9024-310d-427b-8345-62dd9287b5a8)
