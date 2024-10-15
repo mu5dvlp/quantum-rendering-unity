@@ -1,6 +1,4 @@
-import tkinter as tk
 import threading
-import socket
 
 import server
 import gui

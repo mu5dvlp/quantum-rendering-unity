@@ -1,5 +1,5 @@
 import numpy as np
-from qiskit import *
+from qiskit import QuantumCircuit
 
 # //＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
 def get_qubit_counts(length):
