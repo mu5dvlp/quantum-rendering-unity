@@ -48,12 +48,8 @@ namespace MU5.QuantumRendering.Editor
 
                 if (GUILayout.Button("Start"))
                 {
-#if UNITY_EDITOR_OSX
-                    Debug.Log($"Server booting up with {data.python_path} {data.server_application_path}/app.py");
+                    Debug.Log($"Server booting up with\nPython: {data.python_path}\nApplication: {data.server_application_path}");
                     Process.Start(data.python_path, $"{data.server_application_path}");
-#elif UNITY_EDITOR_WIN
-                    Debug.LogWarning($"Windows is not supported.");
-#endif
                 }
                 EditorGUILayout.Space(EditorGUIUtility.singleLineHeight);
             }
