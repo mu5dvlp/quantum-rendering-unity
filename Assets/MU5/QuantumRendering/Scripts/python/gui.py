@@ -14,30 +14,42 @@ class Console(tk.Tk):
         # ネットワーク
         self.frame_network = tk.Frame()
         self.frame_network.pack(pady=10)
-        # ネットワーク > IP
-        self.frame_network_ip = tk.Frame(self.frame_network)
-        self.frame_network_ip.pack()
-        self.label_network_ip = tk.Label(self.frame_network_ip,text="IP Address: ")
-        self.label_network_ip.pack(side=tk.LEFT)
-        self.entry_ip = tk.Entry(self.frame_network_ip,width=15)
-        self.entry_ip.pack(side=tk.LEFT)
-        self.entry_ip.insert(0, "0.0.0.0")
+
+        # ネットワーク
         # ネットワーク > Port(インバウンド)
         self.frame_network_port_inbound = tk.Frame(self.frame_network)
         self.frame_network_port_inbound.pack()
         self.label_network_port_inbound = tk.Label(self.frame_network_port_inbound,text="Port (inbound): ")
         self.label_network_port_inbound.pack(side=tk.LEFT)
+
         self.entry_var_port_inbound = tk.StringVar()
         self.entry_var_port_inbound.trace_add('write',self.on_value_changed_port_inbound)
+
         self.entry_port_inbound = tk.Entry(self.frame_network_port_inbound,width=10,textvariable=self.entry_var_port_inbound)
         self.entry_port_inbound.pack(side=tk.LEFT)
         self.entry_port_inbound.insert(0, f'{self.udp_client.port_inbound}')
+
+        # ネットワーク > ホスト(アウトバウンド)
+        self.frame_network_ip = tk.Frame(self.frame_network)
+        self.frame_network_ip.pack()
+        self.label_network_ip = tk.Label(self.frame_network_ip,text="IP Address: ")
+        self.label_network_ip.pack(side=tk.LEFT)
+
+        self.entry_var_host = tk.StringVar()
+        self.entry_var_host.trace_add('write',self.on_value_changed_host)
+
+        self.entry_ip = tk.Entry(self.frame_network_ip,width=15,textvariable=self.entry_var_host)
+        self.entry_ip.pack(side=tk.LEFT)
+        self.entry_ip.insert(0, f"{udp_client.host}")
+
         # ネットワーク > Port(アウトバウンド)
         self.frame_network_port_outbound = tk.Frame(self.frame_network)
         self.frame_network_port_outbound.pack()
         self.label_network_port_outbound = tk.Label(self.frame_network_port_outbound,text="Port (outbound): ")
+
         self.label_network_port_outbound.pack(side=tk.LEFT)
         self.entry_var_port_outbound = tk.StringVar()
+
         self.entry_var_port_outbound.trace_add('write',self.on_value_changed_port_outbound)
         self.entry_port_outbound = tk.Entry(self.frame_network_port_outbound,width=10,textvariable=self.entry_var_port_outbound)
         self.entry_port_outbound.pack(side=tk.LEFT)
@@ -61,6 +73,10 @@ class Console(tk.Tk):
         self.entry_theta.insert(0,f'{udp_client.theta}')
 
         self.protocol("WM_DELETE_WINDOW", self.on_closing)
+
+
+    def on_value_changed_host(self,*args):
+        self.udp_client.host = self.entry_var_host.get()
 
 
     def on_value_changed_port_inbound(self,*args):

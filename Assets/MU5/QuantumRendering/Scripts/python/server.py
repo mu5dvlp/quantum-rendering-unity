@@ -11,12 +11,14 @@ SHOT_COUNT = 20000
 
 # //ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
 class UDPClient:
-    def __init__(self,host='0.0.0.0',port_inbound=8888,port_outbound=8889):
+    def __init__(self,host='255.255.255.255',port_inbound=8888,port_outbound=8889):
         self.host = host
         self.port_inbound = port_inbound
         self.port_outbound = port_outbound
         self.socket = socket.socket(socket.AF_INET,socket.SOCK_DGRAM)
-        self.socket.bind((self.host,self.port_inbound))
+        self.socket.bind(('0.0.0.0',self.port_inbound))
+        self.socket.setsockopt(socket.SOL_SOCKET, socket.SO_BROADCAST, 1)
+
         self.provider = simulator.Provider(SHOT_COUNT)
         self.running = True
         self.use_blur = False
@@ -60,3 +62,4 @@ class UDPClient:
         _, img_encoded = cv2.imencode('.jpg', image)
         img_bytes = img_encoded.tobytes()
         self.socket.sendto(img_bytes, (self.host, self.port_outbound))
+        print("Data sent to " + self.host + ":" + str(self.port_outbound))
