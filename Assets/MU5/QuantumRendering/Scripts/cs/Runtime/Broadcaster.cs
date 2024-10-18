@@ -8,6 +8,7 @@ namespace MU5.QuantumRendering.Runtime
 {
     public class Broadcaster : MonoBehaviour
     {
+        [SerializeField] string ip = "255.255.255.255";
         [SerializeField] int port = 8888;
 
         private UdpClient udpClient;
@@ -23,7 +24,7 @@ namespace MU5.QuantumRendering.Runtime
             // UDPでブロードキャスト送信
             try
             {
-                IPEndPoint endPoint = new IPEndPoint(IPAddress.Broadcast, port);
+                IPEndPoint endPoint = new IPEndPoint(IPAddress.Parse(ip), port);
                 udpClient.Send(data, data.Length, endPoint);
             }
             catch (Exception ex)
