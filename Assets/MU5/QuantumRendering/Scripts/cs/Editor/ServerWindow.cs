@@ -25,6 +25,8 @@ namespace MU5.QuantumRendering.Editor
 
         void OnGUI()
         {
+            EditorGUI.BeginChangeCheck();
+
             EditorGUILayout.BeginHorizontal(EditorStyles.toolbar);
             data = EditorGUILayout.ObjectField(data, typeof(ServerWindowData), false) as ServerWindowData;
             EditorGUILayout.EndHorizontal();
@@ -52,6 +54,13 @@ namespace MU5.QuantumRendering.Editor
                     Process.Start(data.python_path, $"{data.server_application_path}");
                 }
                 EditorGUILayout.Space(EditorGUIUtility.singleLineHeight);
+            }
+
+            if (EditorGUI.EndChangeCheck())
+            {
+                EditorUtility.SetDirty(data);
+                AssetDatabase.Refresh();
+                AssetDatabase.SaveAssets();
             }
         }
     }
