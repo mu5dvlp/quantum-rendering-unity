@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 58b66de9be6ce41f0864c44f486a4bd8, type: 3}
   m_Name: ServerWindowData
   m_EditorClassIdentifier: 
-  python_path: /Users/reimiogi/.pyenv/versions/3.11.6/bin/python
-  server_application_path: /Users/reimiogi/UnityWorks/QuantumRendering/Assets/MU5/QuantumRendering/Scripts/python/app.py
+  python_path: 
+  server_application_path: 
