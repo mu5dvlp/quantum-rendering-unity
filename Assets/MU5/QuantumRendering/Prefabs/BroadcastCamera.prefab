@@ -278,8 +278,8 @@ Camera:
     m_Bits: 4294967295
   m_RenderingPath: -1
   m_TargetTexture: {fileID: 0}
-  m_TargetDisplay: 1
-  m_TargetEye: 0
+  m_TargetDisplay: 0
+  m_TargetEye: 3
   m_HDR: 1
   m_AllowMSAA: 1
   m_AllowDynamicResolution: 0
@@ -299,7 +299,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0d2bfc0710ba3480ea3a1fc19bdab4e3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ip: 255.255.255.255
   port: 8888
 --- !u!114 &7697533304505428514
 MonoBehaviour:
