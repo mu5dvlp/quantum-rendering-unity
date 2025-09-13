@@ -20,11 +20,11 @@ I have confirmed that it works in the following environment:
 
 (3) Set your python path and server application path.
 
-![03](https://github.com/user-attachments/assets/2a9c4ee4-14ae-4160-9f15-2c8c33725a6e)
+<img width="1370" height="926" alt="376437994-2a9c4ee4-14ae-4160-9f15-2c8c33725a6e" src="https://github.com/user-attachments/assets/9b87474f-f1fe-46d2-af96-87f1ca2e58b8" />
 
 (4) Click start button to start server.
 
-![04](https://github.com/user-attachments/assets/39543186-9fc0-4238-9279-61a85c710795)
+<img width="1370" height="700" alt="376438635-39543186-9fc0-4238-9279-61a85c710795" src="https://github.com/user-attachments/assets/1e0e1ff3-8c9b-4bf9-abea-a5c1b1f68224" />
 
 Then, you can see server console window.
 
