@@ -34,7 +34,7 @@ It will work by default settings.
 
 (5) Play the scene in Unity.
 
-![06](https://github.com/user-attachments/assets/2c0bdb8d-dbb9-40fe-927f-78e61a84eb95)
+<img width="2978" height="1826" alt="376439856-2c0bdb8d-dbb9-40fe-927f-78e61a84eb95-1" src="https://github.com/user-attachments/assets/16806492-5bbc-4466-82da-01ec4ab8f6dd" />
 
 Then, you can see the quantum rendering in the Scene window (NOT the Game window).
 
